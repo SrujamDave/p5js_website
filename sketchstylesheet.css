@@ -1,0 +1,23 @@
+.javascript-sketch {
+	background-color: black;
+	border: 0.2em gold solid;
+	margin: auto;
+	margin-bottom: 2em;
+	padding: 0.3em;
+	display: flex;
+	flex-direction: column;
+	max-width: calc(1 * 1)%;
+}
+
+.tooltip {
+	color: white;
+	max-width: 15em;
+}
+
+.column {
+	margin-right: auto;
+	margin-left: 0;
+	width: 33%;
+	display: inline-flex;
+	flex-direction: column;
+}

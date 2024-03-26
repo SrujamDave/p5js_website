@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <title>SRUJSITE</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="sitestylesheet.css"></link>
+  <link rel="stylesheet" href="sketchstylesheet.css"></link>
+  <link rel="icon" type="image/x-icon" href="baljeetfavicon.ico"></link>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+  <script src="sketches/lorenz.js"></script>
+  <script src="sketches/flockingsimulator.js"></script>
+  <script src="sketches/chaosgame.js"></script>
+  <script src="sketches/gameoflife.js"></script>
+  <script src="sketches/lsystem.js"></script>
+</head>
+
+<body>
+  <!-- Creates header, adds div for formatting -->
+  <header>
+    <h1 id="main-heading">SRUJAM DAVE WEBSITE</h1>
+  </header>
+
+  <!--Sidebar-->
+  <div class="sidebar">
+    <p><b>Website Contents</b></p>
+    <ul>
+      <li><a href="sketches.html">Javascript Sketches</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <!-- sketch intro text -->
+    <h1>Javascript Sketches</h1>
+    <p>Various science-ey mathematical sketches and animations made using the p5.js javascript library.</br></br></p>
+
+    <!--Sketches-->
+    <div class = "column">
+      <div id="lorenz-parent" class="javascript-sketch">
+        <details>
+          <summary class="tooltip">Lorenz Attractor</summary>
+          <p class="tooltip">The Lorenz System is a system of partial differential equations created by Edward Lorenz in 1963 in an attempt to simulate the movement of air currents. The Lorenz Attractor (pictured below) is a set of solutions to the system that famously exhibit the mathematical property of chaos: that very similar input conditions to a system can yield wildly different outcomes. Here, the blue and purple dots have almost exactly the same starting positions, but vastly different trajectories.</p>
+        </details>
+      </div>
+
+      <div id="flocking-parent" class="javascript-sketch">
+        <details>
+          <summary class="tooltip">Flocking Simulation</summary>
+          <p class="tooltip">This flocking simultion, known as <em>boids</em>, was created by Craig Reynolds in 1986. Each simulated bird (or boid) tries to align itself with nearby boids, move towards the center of the flock, and maintain an even separation from other boids. These simple rules give rise to complex patterns, demonstrating the power of emergent behavior.</p>
+        </details>
+      </div>
+    </div>
+
+
+    <div class = "column">
+      <div id="chaos-game" class="javascript-sketch">
+        <details>
+          <summary class="tooltip">Chaos Game</summary>
+          <p class="tooltip">The <em>Chaos Game</em> is a procedural method of generating fractals. At the start of the simulation, a certain number of points (here in gray) are selected, as well as a random point that "hops" across the screen. Every frame, the hopper is moved partway towards a randomly selected gray point. By altering the number of gray points, the method by which the points are selected, and the distance the hopper moves every frame, it is possible to create a variety of eye-catching patterns.</p>
+        </details>
+      </div>
+
+      <div id="l-system" class="javascript-sketch">
+        <details>
+          <summary class="tooltip">Lindenmayer System</summary>
+          <p class="tooltip">A Lindenmayer System, or L-System, procedurally generates complex self-similar shapes. First, a "seed word" is iterated over repeatedly, with every character in the word replaced with string of other characters found in the system's ruleset. After a final word has been generated, the word is used to control the movement of a brush on a canvas: every character either movesthe brush, rotates it, or jumps it back to a previous location. L-Systems can be used to generate a variety of fractal shapes and simulate natural phenomena. Here, an L-system is repeatedly drawn, updated, and drawn again in real time.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class = "column">
+      <div id="gameoflife" class="javascript-sketch">
+        <details>
+          <summary class="tooltip">Conway's Game of Life</summary>
+          <p class="tooltip">John Conway's Game of Life is a famous example of a <em>cellular automata</em>, which divide the plane into cells and control their behavior through simple rules. Here, the cells are divided into "living" (white) and "dead" (black) cells, governed by the following rules:</p>
+          <ul class="tooltip">
+            <li>Each living cell stays alive if it has 2-3 living neighbors</li>
+            <li>A dead cell comes to life if it has 3 living neighbors</li>
+            <li>All other cells die</li>
+          </ul>
+          <p class="tooltip">The cells can arrange themselves into complex, self sustaining systems that are stable or change predictably over long periods of time.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+</html>
