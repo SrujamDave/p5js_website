@@ -1,12 +1,15 @@
 var lorenz = function(p) {
+  //Canvas dimensions
   let width;
   let height;
 
+  //constants in Lorenz's equations
   let dt = 0.005;
   let sigma = 10;
   let rho = 28;
   let beta = 8.0 / 3.0;
 
+  //Dimensions of points that move over time (z value isn't drawn)
   let x1;
   let y1; 
   let z1;
@@ -14,7 +17,9 @@ var lorenz = function(p) {
   let x2; 
   let y2;
   let z2;
-
+  
+  //Resets canvas by moving both points to a random location with the same
+  //x and y, but different z
   function resetAttractor() {
     p.clear();
 
@@ -27,6 +32,7 @@ var lorenz = function(p) {
     z2 = 5;
   }
 
+  //Sets up canvas, sets/resets lorenz attractor if necessary
   p.setup = function() {
     width = window.innerWidth / 5;
     height = width;
@@ -38,6 +44,7 @@ var lorenz = function(p) {
     resetAttractor();
   }
 
+  //Moves each point according to Lorenz's equations and draws them
   p.draw = function() {
     p.noStroke();
     p.translate(width/2, height/2);
@@ -57,6 +64,7 @@ var lorenz = function(p) {
     p.ellipse(x2*5, y2*5, 2, 2);
   }
 
+  //Resizes canvas when window resized
   p.windowResized = function() {
     p.clear();
     let width = window.innerWidth / 5;

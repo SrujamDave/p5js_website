@@ -2,14 +2,16 @@
 <html lang="">
 
 <head>
+  <!--Site metadata-->
   <title>Srujam Website</title>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+   <!--CSS Stylesheets-->
   <link rel="stylesheet" href="sitestylesheet.css"></link>
   <link rel="stylesheet" href="sketchstylesheet.css"></link>
 
+  <!--Javascript sketches-->
   <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
   <script src="sketches/lorenz.js"></script>
   <script src="sketches/flockingsimulator.js"></script>
@@ -35,17 +37,20 @@
   <div class="content">
     <!-- sketch intro text -->
     <h1>Javascript Sketches</h1>
-    <p>Various science-ey mathematical sketches and animations made using the p5.js javascript library.</br></br></p>
+    <p>Various science-ey mathematical sketches and animations made using the p5.js javascript library.</br> Click on sketches to reset/restart them, and click on collapsables for explanations and context for each sketch.</br></br></p>
 
     <!--Sketches-->
     <div class = "column">
       <div id="lorenz-parent" class="javascript-sketch">
+
+	<!--Lorenz Attractor sketch-->
         <details>
           <summary class="tooltip">Lorenz Attractor</summary>
           <p class="tooltip">The Lorenz System is a system of partial differential equations created by Edward Lorenz in 1963 in an attempt to simulate the movement of air currents. The Lorenz Attractor (pictured below) is a set of solutions to the system that famously exhibit the mathematical property of chaos: that very similar input conditions to a system can yield wildly different outcomes. Here, the blue and purple dots have almost exactly the same starting positions, but vastly different trajectories.</p>
         </details>
       </div>
 
+      <!--Boids sketch-->
       <div id="flocking-parent" class="javascript-sketch">
         <details>
           <summary class="tooltip">Flocking Simulation</summary>
@@ -56,6 +61,7 @@
 
 
     <div class = "column">
+      <!--Chaos Attractor Sketch-->
       <div id="chaos-game" class="javascript-sketch">
         <details>
           <summary class="tooltip">Chaos Game</summary>
@@ -63,6 +69,7 @@
         </details>
       </div>
 
+      <!--Lindenmayer System Sketch-->
       <div id="l-system" class="javascript-sketch">
         <details>
           <summary class="tooltip">Lindenmayer System</summary>
@@ -72,6 +79,7 @@
     </div>
 
     <div class = "column">
+      <!--Conway's Game of Life Sketch-->
       <div id="gameoflife" class="javascript-sketch">
         <details>
           <summary class="tooltip">Conway's Game of Life</summary>

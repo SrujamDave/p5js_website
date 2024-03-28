@@ -1,16 +1,22 @@
 var gameOfLife = function(p) {
-    let width;
-    let height;
+	//Canvas dimensions
+	let width;
+	let height;
 
+	//Outlines rows and columns in grid
 	let columns = 40;
 	let rows = 40;
 	let padding = 1;
 
+	//Stores which cells are dead and alive
 	let lifeArray;
 
+	//Dimensions of each cell calculated based on number of rows/cols
+	//and the size of the canvas
 	let squareWidth;
 	let squareHeight;
 
+	//Randomly fills up the grid with living and dead cells
 	function populateGrid() {
 		lifeArray =[];
 
@@ -28,6 +34,7 @@ var gameOfLife = function(p) {
 		lifeArray.push(Array(columns + 2).fill(0));
 	}
 
+	//Draws the cells in black and white depending if they're alive or dead
 	function drawLife() {
 		for (i = 0; i < rows; i++) {
 			let currentRow = lifeArray[i + 1];
@@ -35,13 +42,16 @@ var gameOfLife = function(p) {
 			for(j = 0; j < columns; j++) {
 				if (currentRow[j + 1] == 1) {
 					p.fill(256, 256, 256);
-					p.rect(j * squareWidth + padding, i * squareHeight + padding, 
-					squareWidth - 2 * padding, squareHeight - 2 * padding);
+					p.rect(j * squareWidth + padding, 
+						i * squareHeight + padding,
+						squareWidth - 2 * padding,
+						squareHeight - 2 * padding);
 				} 
 			}
 		}
 	}
 
+	//Updates the cells' status based on Conway's rules
 	function updateLife() {
 		updatedLifeArray = [];
 		counter = 0;
@@ -60,9 +70,12 @@ var gameOfLife = function(p) {
 				lifeArray[i+1][j] + 
 				lifeArray[i+1][j+1];
 
-				if (lifeArray[i][j] == 1 && (neighborCount == 2 || neighborCount == 3)) {
+				if (lifeArray[i][j] == 1 && 
+					(neighborCount == 2 
+					|| neighborCount == 3)) {
 					currentRow.push(1);
-				} else if (lifeArray[i][j] == 0 && neighborCount == 3) {
+				} else if (lifeArray[i][j] == 0 && 
+					neighborCount == 3) {
 					currentRow.push(1);
 				} else {
 					currentRow.push(0);
@@ -75,17 +88,14 @@ var gameOfLife = function(p) {
 		lifeArray = updatedLifeArray;
 	}
 
-	function resetCanvas() {
-		populateGrid();
-	}
-
+	//Sets up canvas, initializes/resets canvas by populating grid
 	p.setup = function () {
 		width = window.innerWidth / 5;
 		height = width;
 
 		let lifeCanvas = p.createCanvas(width, height);
 		lifeCanvas.parent("gameoflife");
-		lifeCanvas.mouseClicked(resetCanvas);
+		lifeCanvas.mouseClicked(populateGrid);
 
 		squareWidth = width / columns;
 		squareHeight = height / rows;
@@ -93,6 +103,7 @@ var gameOfLife = function(p) {
 		populateGrid();
 	}
 
+	//Draws/redraws cells, updates grid
 	p.draw = function () {
 		p.clear();
 		p.frameRate(7);
@@ -101,6 +112,7 @@ var gameOfLife = function(p) {
 		updateLife();
 	}
 
+	//Resizes canvas if grid dimensions changed
 	p.windowResized = function() {
 		let size = window.innerWidth / 5;
 		p.resizeCanvas(size, size);

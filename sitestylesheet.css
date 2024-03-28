@@ -1,3 +1,6 @@
+/* Contains styling for everything in the webpage *except* for the p5js 
+ * sketches and the details tag that surround them */
+
 * { 
 	margin: 0; 
 	padding: 0;

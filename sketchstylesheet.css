@@ -1,3 +1,6 @@
+/* Contains the styling for the details tags that surround the p5js sketches,
+ * the paragraphs in the tags, and spacing for the sketches themselves */
+
 .javascript-sketch {
 	background-color: black;
 	border: 0.2em gold solid;
